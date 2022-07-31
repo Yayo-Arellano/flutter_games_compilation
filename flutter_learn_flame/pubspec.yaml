@@ -1,0 +1,28 @@
+name: flutter_learn_flame
+description: Learn flame
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flame: ^1.2.1
+  flame_forge2d: ^0.12.1
+  flame_texturepacker: ^2.0.0+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/explosion/
+    - assets/images/robot/
