@@ -5,6 +5,7 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_learn_flame/main.dart';
+import 'package:flutter_learn_flame/routes.dart';
 import 'package:flutter_learn_flame/utils/constants.dart';
 
 final screenSize = Vector2(1280, 720);
@@ -21,7 +22,7 @@ class MyGame extends Forge2DGame with KeyboardEvents {
   @override
   Future<void> onLoad() async {
     camera.viewport = FixedResolutionViewport(screenSize);
-    add(_Background(size: screenSize) ..positionType = PositionType.viewport);
+    add(_Background(size: screenSize)..positionType = PositionType.viewport);
     add(FpsTextComponent()
       ..x = 5
       ..y = 665);
@@ -46,7 +47,8 @@ class MyGame extends Forge2DGame with KeyboardEvents {
   KeyEventResult onKeyEvent(RawKeyEvent event, Set keysPressed) {
     if (event is RawKeyDownEvent) {
       if (keysPressed.contains(LogicalKeyboardKey.escape)) {
-        currentLessonNotifier.value = null;
+        navigatorKey.currentState
+            ?.pushNamedAndRemoveUntil(Routes.menu, (r) => false);
         return KeyEventResult.handled;
       }
     }
@@ -65,5 +67,32 @@ class _Background extends PositionComponent {
   @override
   void render(Canvas canvas) {
     canvas.drawRect(Rect.fromLTWH(0, 0, size.x, size.y), blackPaint);
+  }
+}
+
+class MyGameWidget extends StatelessWidget {
+  final MyGame game;
+
+  const MyGameWidget({super.key, required this.game});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () {
+            navigatorKey.currentState
+                ?.pushNamedAndRemoveUntil(Routes.menu, (r) => false);
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
+      ),
+      body: GameWidget(
+        game: game,
+      ),
+    );
   }
 }

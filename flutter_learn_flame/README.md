@@ -2,6 +2,8 @@
 
 Learn flame
 
+[Try on your browser](https://yayo-arellano.github.io/flutter_games_compilation/flutter_learn_flame)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -22,6 +22,7 @@ class GameLesson08 extends MyGame {
 
   @override
   KeyEventResult onKeyEvent(RawKeyEvent event, Set keysPressed) {
+    super.onKeyEvent(event, keysPressed);
     if (event is RawKeyDownEvent) {
       if (event.logicalKey == LogicalKeyboardKey.keyW) {
         robot.jump();

@@ -31,12 +31,13 @@ class GameLesson09 extends MyGame {
     await add(robot);
 
     final worldBounds =
-        Rect.fromLTRB(0, -worldSize.y * 3, worldSize.x, worldSize.y);
+        Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
     camera.followBodyComponent(robot, worldBounds: worldBounds);
   }
 
   @override
   KeyEventResult onKeyEvent(RawKeyEvent event, Set keysPressed) {
+    super.onKeyEvent(event, keysPressed);
     if (event is RawKeyDownEvent) {
       if (event.logicalKey == LogicalKeyboardKey.keyW) {
         robot.jump();
