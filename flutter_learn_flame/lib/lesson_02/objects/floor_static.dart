@@ -1,4 +1,3 @@
-import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter_learn_flame/my_game.dart';
 
@@ -11,9 +10,7 @@ class FloorStatic extends BodyComponent {
     );
 
     final shape = EdgeShape()..set(Vector2.zero(), Vector2(worldSize.x, 0));
-
     final fixtureDef = FixtureDef(shape);
-
     return world.createBody(bodyDef)..createFixture(fixtureDef);
   }
 }

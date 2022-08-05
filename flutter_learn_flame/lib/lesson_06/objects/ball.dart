@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter_learn_flame/lesson_06/objects/object_state.dart';
@@ -42,7 +40,7 @@ class Ball extends BodyComponent with ContactCallbacks {
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: Vector2(Random().nextDouble() * worldSize.x, 0),
+      position: Vector2(worldSize.x / 2, 0),
       type: BodyType.dynamic,
     );
 

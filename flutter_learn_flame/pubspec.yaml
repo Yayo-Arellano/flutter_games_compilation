@@ -12,7 +12,6 @@ dependencies:
 
   flame: ^1.2.1
   flame_forge2d: ^0.12.1
-  flame_texturepacker: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -24,5 +23,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/explosion/
+    - assets/images/coin/
     - assets/images/robot/
+    - assets/images/explosion/

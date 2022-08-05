@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flame/components.dart';
-import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter_learn_flame/lesson_07/game_lesson_07.dart';
 import 'package:flutter_learn_flame/lesson_07/objects/object_state.dart';
@@ -56,7 +53,7 @@ class Box extends BodyComponent with ContactCallbacks {
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: Vector2(Random().nextDouble() * worldSize.x, 0),
+      position: Vector2(worldSize.x / 2, 0),
       type: BodyType.dynamic,
     );
 

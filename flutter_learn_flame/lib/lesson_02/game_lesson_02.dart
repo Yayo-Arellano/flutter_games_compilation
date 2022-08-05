@@ -8,7 +8,7 @@ class GameLesson02 extends MyGame {
   Future<void> onLoad() async {
     super.onLoad();
     add(FloorStatic());
-    add(BoxKinematic());
     add(BallDynamic());
+    add(BoxKinematic());
   }
 }

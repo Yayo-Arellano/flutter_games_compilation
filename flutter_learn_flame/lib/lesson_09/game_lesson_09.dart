@@ -1,7 +1,9 @@
+import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_learn_flame/lesson_09/objects/coin.dart';
 import 'package:flutter_learn_flame/lesson_09/objects/floor.dart';
 import 'package:flutter_learn_flame/lesson_09/objects/platform.dart';
 import 'package:flutter_learn_flame/lesson_09/objects/robot.dart';
@@ -11,6 +13,8 @@ void main() {
   runApp(GameWidget(game: GameLesson09()));
 }
 
+late SpriteAnimation coin;
+
 class GameLesson09 extends MyGame {
   final robot = Robot();
 
@@ -18,11 +22,37 @@ class GameLesson09 extends MyGame {
   Future<void> onLoad() async {
     super.onLoad();
 
+    final coin1 = await loadSprite('coin/coin1.png');
+    final coin2 = await loadSprite('coin/coin2.png');
+    final coin3 = await loadSprite('coin/coin3.png');
+    final coin4 = await loadSprite('coin/coin4.png');
+    final coin5 = await loadSprite('coin/coin5.png');
+    final coin6 = await loadSprite('coin/coin6.png');
+    final coin7 = await loadSprite('coin/coin7.png');
+    final coin8 = await loadSprite('coin/coin8.png');
+    final coin9 = await loadSprite('coin/coin9.png');
+
+    coin = SpriteAnimation.spriteList([
+      coin1,
+      coin2,
+      coin3,
+      coin4,
+      coin5,
+      coin6,
+      coin7,
+      coin8,
+      coin9,
+    ], stepTime: 0.15, loop: true);
+
     await loadSprite('platform.png');
 
     add(Floor());
     add(Platform(x: 3, y: 4));
+    add(Coin(x: 3, y: 3));
+
     add(Platform(x: 12, y: 1));
+    add(Coin(x: 12, y: 0));
+
     add(Platform(x: 7, y: -2));
     add(Platform(x: 2, y: -5));
     add(Platform(x: 5, y: -8));

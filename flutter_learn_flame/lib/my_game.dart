@@ -8,38 +8,39 @@ import 'package:flutter_learn_flame/main.dart';
 import 'package:flutter_learn_flame/routes.dart';
 import 'package:flutter_learn_flame/utils/constants.dart';
 
+// Fixed viewport size
 final screenSize = Vector2(1280, 720);
+
+// Scaled viewport size
 final worldSize = Vector2(12.8, 7.2);
 
 class MyGame extends Forge2DGame with KeyboardEvents {
-  final totalBodies = TextComponent()
-    ..positionType = PositionType.viewport
-    ..x = 5
-    ..y = 690;
+  // Keep track of the number of bodies in the world.
+  final totalBodies = TextComponent(position: Vector2(5, 690))
+    ..positionType = PositionType.viewport;
 
+  // Keep track of the frames per second
+  final fps = FpsTextComponent(position: Vector2(5, 665));
+
+  // Scale the screenSize by 100 and set the gravity of 15
   MyGame() : super(zoom: 100, gravity: Vector2(0, 15));
 
   @override
   Future<void> onLoad() async {
+    // Set the FixedResolutionViewport
     camera.viewport = FixedResolutionViewport(screenSize);
+
+    // Adds a black background to the viewport
     add(_Background(size: screenSize)..positionType = PositionType.viewport);
-    add(FpsTextComponent()
-      ..x = 5
-      ..y = 665);
+
+    add(fps);
     add(totalBodies);
-
-    print('Camera: canvasSize: ${camera.canvasSize}');
-    print('Camera: viewport.effectiveSize ${camera.viewport.effectiveSize}');
-    print('Camera: gameSize ${camera.gameSize}');
-
-    final worldX = screenToWorld(camera.viewport.effectiveSize);
-
-    print('worldSize ${worldX}');
   }
 
   @override
   void update(double dt) {
     super.update(dt);
+    // Updated the number of bodies in the world
     totalBodies.text = 'Bodies: ${world.bodies.length}';
   }
 
@@ -57,10 +58,12 @@ class MyGame extends Forge2DGame with KeyboardEvents {
 
   @override
   Color backgroundColor() {
+    // Paints the background red
     return Colors.red;
   }
 }
 
+// Helper component that paints a black background
 class _Background extends PositionComponent {
   _Background({super.size});
 
