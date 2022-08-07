@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter_learn_flame/lesson_07/objects/object_state.dart';
@@ -9,21 +11,17 @@ class Ball extends BodyComponent with ContactCallbacks {
   final size = Vector2(.5, .5);
   ObjectState state = ObjectState.normal;
 
-  late final SpriteComponent normalComponent;
-
   @override
   Future<void> onLoad() async {
     await super.onLoad();
     renderBody = false;
     final sprite = Sprite(gameRef.images.fromCache('ball.png'));
 
-    normalComponent = SpriteComponent(
+    add(SpriteComponent(
       sprite: sprite,
       size: Vector2(.5, .5),
       anchor: Anchor.center,
-    );
-
-    add(normalComponent);
+    ));
   }
 
   @override
@@ -39,7 +37,6 @@ class Ball extends BodyComponent with ContactCallbacks {
   void hit() {
     if (state == ObjectState.normal) {
       state = ObjectState.explode;
-      remove(normalComponent);
       gameRef.add(SpriteAnimationComponent(
         position: body.position,
         animation: explosion.clone(),
@@ -63,7 +60,9 @@ class Ball extends BodyComponent with ContactCallbacks {
       ..density = 5
       ..friction = .5
       ..restitution = .5;
-    return world.createBody(bodyDef)..createFixture(fixtureDef);
+    return world.createBody(bodyDef)
+      ..createFixture(fixtureDef)
+      ..angularVelocity = radians(180);
   }
 
   @override
