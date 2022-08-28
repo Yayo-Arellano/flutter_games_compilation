@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flame: ^1.2.1
-  flame_forge2d: ^0.12.1
+  flame: ^1.3.0
+  flame_forge2d: ^0.12.2
   shared_preferences: ^2.0.15
   sensors_plus: ^1.3.4+1
 
