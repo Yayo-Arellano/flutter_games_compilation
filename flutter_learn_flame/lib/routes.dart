@@ -1,6 +1,5 @@
 import 'dart:core';
 
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_flame/lesson_01/game_lesson_01.dart';
 import 'package:flutter_learn_flame/lesson_02/game_lesson_02.dart';
