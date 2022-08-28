@@ -35,6 +35,26 @@ class Assets {
   static late final Sprite platformBlueBroken;
   static late final Sprite platformBlueLeft;
   static late final Sprite platformBlueRight;
+  static late final Sprite platformGray;
+  static late final Sprite platformGrayLight;
+  static late final Sprite platformGrayBroken;
+  static late final Sprite platformGrayLeft;
+  static late final Sprite platformGrayRight;
+  static late final Sprite platformGreen;
+  static late final Sprite platformGreenLight;
+  static late final Sprite platformGreenBroken;
+  static late final Sprite platformGreenLeft;
+  static late final Sprite platformGreenRight;
+  static late final Sprite platformMulticolor;
+  static late final Sprite platformMulticolorLight;
+  static late final Sprite platformMulticolorBroken;
+  static late final Sprite platformMulticolorLeft;
+  static late final Sprite platformMulticolorRight;
+  static late final Sprite platformPink;
+  static late final Sprite platformPinkLight;
+  static late final Sprite platformPinkBroken;
+  static late final Sprite platformPinkLeft;
+  static late final Sprite platformPinkRight;
 
   static Future<void> load() async {
     button = await _loadSprite('ui/button.png');
@@ -89,6 +109,30 @@ class Assets {
     platformBlueBroken = await _loadPlatform('BrokenLandPiece_Blue');
     platformBlueLeft = await _loadPlatform('HalfLandPiece_Left_Blue');
     platformBlueRight = await _loadPlatform('HalfLandPiece_Right_Blue');
+
+    platformGray = await _loadPlatform('LandPiece_DarkGray');
+    platformGrayLight = await _loadPlatform('LandPiece_LightGray');
+    platformGrayBroken = await _loadPlatform('BrokenLandPiece_Gray');
+    platformGrayLeft = await _loadPlatform('HalfLandPiece_Left_Gray');
+    platformGrayRight = await _loadPlatform('HalfLandPiece_Right_Gray');
+
+    platformGreen = await _loadPlatform('LandPiece_DarkGreen');
+    platformGreenLight = await _loadPlatform('LandPiece_LightGreen');
+    platformGreenBroken = await _loadPlatform('BrokenLandPiece_Green');
+    platformGreenLeft = await _loadPlatform('HalfLandPiece_Left_Green');
+    platformGreenRight = await _loadPlatform('HalfLandPiece_Right_Green');
+
+    platformMulticolor = await _loadPlatform('LandPiece_DarkMulticolored');
+    platformMulticolorLight = await _loadPlatform('LandPiece_LightMulticolored');
+    platformMulticolorBroken = await _loadPlatform('BrokenLandPiece_Multicolored');
+    platformMulticolorLeft = await _loadPlatform('HalfLandPiece_Left_Multicolored');
+    platformMulticolorRight = await _loadPlatform('HalfLandPiece_Right_Multicolored');
+
+    platformPink = await _loadPlatform('LandPiece_DarkPink');
+    platformPinkLight = await _loadPlatform('LandPiece_LightPink');
+    platformPinkBroken = await _loadPlatform('BrokenLandPiece_Pink');
+    platformPinkLeft = await _loadPlatform('HalfLandPiece_Left_Pink');
+    platformPinkRight = await _loadPlatform('HalfLandPiece_Right_Pink');
   }
 
   static Future<Sprite> _loadPlatform(String name) {

@@ -4,12 +4,24 @@ import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
 
 enum PlatformType {
-  beige,
   blue,
   blueLight,
-  beigeLight,
   blueBroken,
-  beigeBroken;
+  beige,
+  beigeLight,
+  beigeBroken,
+  gray,
+  grayLight,
+  grayBroken,
+  green,
+  greenLight,
+  greenBroken,
+  multicolor,
+  multicolorLight,
+  multicolorBroken,
+  pink,
+  pinkLight,
+  pinkBroken,
 }
 
 extension PlatformTypeExtension on PlatformType {
@@ -27,6 +39,30 @@ extension PlatformTypeExtension on PlatformType {
         return Assets.platformBeigeBroken;
       case PlatformType.blueBroken:
         return Assets.platformBlueBroken;
+      case PlatformType.gray:
+        return Assets.platformGray;
+      case PlatformType.grayLight:
+        return Assets.platformGrayLight;
+      case PlatformType.grayBroken:
+        return Assets.platformGrayBroken;
+      case PlatformType.green:
+        return Assets.platformGreen;
+      case PlatformType.greenLight:
+        return Assets.platformGreenLight;
+      case PlatformType.greenBroken:
+        return Assets.platformGreenBroken;
+      case PlatformType.multicolor:
+        return Assets.platformMulticolor;
+      case PlatformType.multicolorLight:
+        return Assets.platformMulticolorLight;
+      case PlatformType.multicolorBroken:
+        return Assets.platformMulticolorBroken;
+      case PlatformType.pink:
+        return Assets.platformPink;
+      case PlatformType.pinkLight:
+        return Assets.platformPinkLight;
+      case PlatformType.pinkBroken:
+        return Assets.platformPinkBroken;
     }
   }
 
@@ -34,6 +70,10 @@ extension PlatformTypeExtension on PlatformType {
     switch (this) {
       case PlatformType.blueBroken:
       case PlatformType.beigeBroken:
+      case PlatformType.grayBroken:
+      case PlatformType.greenBroken:
+      case PlatformType.multicolorBroken:
+      case PlatformType.pinkBroken:
         return true;
       default:
         return false;
@@ -52,7 +92,8 @@ class Platform extends BodyComponent<MyGame> {
     required double x,
     required double y,
   })  : _position = Vector2(x, y),
-        type = PlatformType.values.elementAt(random.nextInt(6));
+        type = PlatformType.values
+            .elementAt(random.nextInt(PlatformType.values.length));
 
   @override
   Future<void> onLoad() async {

@@ -38,6 +38,34 @@ class PlatformPieces extends BodyComponent<MyGame> {
           sprite = Assets.platformBlueRight;
         }
         break;
+      case PlatformType.grayBroken:
+        if (isLeftSide) {
+          sprite = Assets.platformGrayLeft;
+        } else {
+          sprite = Assets.platformGrayRight;
+        }
+        break;
+      case PlatformType.greenBroken:
+        if (isLeftSide) {
+          sprite = Assets.platformGreenLeft;
+        } else {
+          sprite = Assets.platformGreenRight;
+        }
+        break;
+      case PlatformType.multicolorBroken:
+        if (isLeftSide) {
+          sprite = Assets.platformMulticolorLeft;
+        } else {
+          sprite = Assets.platformMulticolorRight;
+        }
+        break;
+      case PlatformType.pinkBroken:
+        if (isLeftSide) {
+          sprite = Assets.platformPinkLeft;
+        } else {
+          sprite = Assets.platformPinkRight;
+        }
+        break;
       default:
         throw ('Wrong platform type exception');
     }
