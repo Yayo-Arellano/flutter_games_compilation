@@ -36,11 +36,11 @@ so here is [3001] as you can see the last digit match
 
 
 <!-- Tips -->
-[5001]: <https://yayocode.blogspot.com/2022/08/flame-getting-started-setting-up-project_4.html> 'article1'
-[5002]: <https://yayocode.blogspot.com/2022/08/flame-world-bodies-shapes-and-fixtures.html> 'article2'
-[5003]: <https://yayocode.blogspot.com/2022/08/flame-body-types-dynamic-static.html> 'article3'
-[5004]: <https://yayocode.blogspot.com/2022/08/flame-friction-density-restitution.html> 'article4'
-[5005]: <https://yayocode.blogspot.com/2022/08/flame-forces-impulses-linear-velocity.html> 'article5'
-[5006]: <https://yayocode.blogspot.com/2022/08/flame-bodies-and-sprites.html> 'article6'
-[5007]: <https://yayocode.blogspot.com/2022/08/flame-collisions.html> 'article7'
-[5008]: <https://yayocode.blogspot.com/2022/08/flame-collisions-with-animated-sprites.html> 'article8'
+[5001]: <https://yayocode.com/post/XPECczhhAZgJDGcy69AO> 'article1'
+[5002]: <https://yayocode.com/post/pD63d2bqXJnaRU8Er80B> 'article2'
+[5003]: <https://yayocode.com/post/7hp4dLXobT8GJ3NtzVOS> 'article3'
+[5004]: <https://yayocode.com/post/Gt8E8u7W9ftte6nRp1fu> 'article4'
+[5005]: <https://yayocode.com/post/yPFeIgyd6Jnz8Pgby6FU> 'article5'
+[5006]: <https://yayocode.com/post/91HWShtzuHkfaOj9gPP3> 'article6'
+[5007]: <https://yayocode.com/post/5eL4tEcqOwlVxrtJV1BD> 'article7'
+[5008]: <https://yayocode.com/post/ByfdSu012LCDKkAucB50> 'article8'
