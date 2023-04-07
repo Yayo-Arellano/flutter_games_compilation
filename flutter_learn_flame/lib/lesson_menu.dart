@@ -15,39 +15,39 @@ class LessonMenu extends StatelessWidget {
             children: const [
               SizedBox(height: 32),
               ButtonItem(
-                title: 'The world, bodies, shapes and fixtures',
+                title: '1- The world, bodies, shapes and fixtures',
                 route: Routes.lesson01,
               ),
               ButtonItem(
-                title: 'Body types: dynamic, static & kinematic',
+                title: '2- Body types: dynamic, static & kinematic',
                 route: Routes.lesson02,
               ),
               ButtonItem(
-                title: 'Friction, density & restitution',
+                title: '3- Friction, density & restitution',
                 route: Routes.lesson03,
               ),
               ButtonItem(
-                title: 'Forces, impulses & linear velocity',
+                title: '4- Forces, impulses & linear velocity',
                 route: Routes.lesson04,
               ),
               ButtonItem(
-                title: 'Bodies and sprites',
+                title: '5- Bodies and sprites',
                 route: Routes.lesson05,
               ),
               ButtonItem(
-                title: 'Collisions',
+                title: '6- Collisions',
                 route: Routes.lesson06,
               ),
               ButtonItem(
-                title: 'Collisions with animated sprites',
+                title: '7- Collisions with animated sprites',
                 route: Routes.lesson07,
               ),
               ButtonItem(
-                title: 'Animated sprites: walk, jump, duck',
+                title: '8- Animated sprites: walk, jump, duck',
                 route: Routes.lesson08,
               ),
               ButtonItem(
-                title: 'Camera',
+                title: '9- Working with the camera',
                 route: Routes.lesson09,
               ),
             ],

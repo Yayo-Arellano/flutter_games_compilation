@@ -30,9 +30,7 @@ class Platform extends BodyComponent {
     );
 
     final shape = PolygonShape()..setAsBoxXY(.85, .15);
-
     final fixtureDef = FixtureDef(shape)..friction = .7;
-
     return world.createBody(bodyDef)..createFixture(fixtureDef);
   }
 }

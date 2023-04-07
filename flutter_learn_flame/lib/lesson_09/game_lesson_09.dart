@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
@@ -47,22 +49,34 @@ class GameLesson09 extends MyGame {
     await loadSprite('platform.png');
 
     add(Floor());
-    add(Platform(x: 3, y: 4));
-    add(Coin(x: 3, y: 3));
 
-    add(Platform(x: 12, y: 1));
-    add(Coin(x: 12, y: 0));
+    final ran = Random();
+    const previousX = 0;
+    for (int i = 0; i < 100; i++) {
+      var x = (ran.nextDouble() * (worldSize.x - 6)) + 3;
 
-    add(Platform(x: 7, y: -2));
-    add(Platform(x: 2, y: -5));
-    add(Platform(x: 5, y: -8));
-    add(Platform(x: 7, y: -11));
-    add(Platform(x: 9, y: -14));
+      final y = 4.0 - (i * 3);
+      add(Platform(x: x, y: y));
+      add(Coin(x: x, y: y - 1));
+    }
+
+    // add(Platform(x: 3, y: 4));
+    // add(Coin(x: 3, y: 3));
+    //
+    // add(Platform(x: 12, y: 1));
+    // add(Coin(x: 12, y: 0));
+    //
+    // add(Platform(x: 7, y: -2));
+    // add(Platform(x: 2, y: -5));
+    // add(Platform(x: 5, y: -8));
+    // add(Platform(x: 7, y: -11));
+    // add(Platform(x: 9, y: -14));
     await add(robot);
-
-    final worldBounds =
-        Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
-    camera.followBodyComponent(robot, worldBounds: worldBounds);
+    //
+    // final worldBounds =
+    //     Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
+    // camera.followBodyComponent(robot, worldBounds: worldBounds);
+    camera.followBodyComponent(robot);
   }
 
   @override

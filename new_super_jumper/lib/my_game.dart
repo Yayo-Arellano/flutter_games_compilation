@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
-import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
@@ -30,10 +29,7 @@ enum GameState {
 }
 
 class MyGame extends Forge2DGame
-    with
-        HasKeyboardHandlerComponents,
-        HasTappableComponents,
-        HasTappablesBridge {
+    with HasKeyboardHandlerComponents, TapDetector {
   late final MyHero hero;
 
   int score = 0;
@@ -186,8 +182,8 @@ class MyGame extends Forge2DGame
   }
 
   @override
-  void onTapUp(TapUpEvent event) {
-    super.onTapUp(event);
+  void onTapUp(TapUpInfo info) {
+    super.onTapUp(info);
     hero.fireBullet();
   }
 

@@ -84,11 +84,12 @@ class Robot extends BodyComponent with KeyboardHandler {
     ], stepTime: 0.05, loop: true);
 
     walkComponent = SpriteAnimationComponent(
-        animation: walkAnimation,
-        anchor: Anchor.center,
-        position: _componentPosition,
-        size: _size,
-        removeOnFinish: false);
+      animation: walkAnimation,
+      anchor: Anchor.center,
+      position: _componentPosition,
+      size: _size,
+      removeOnFinish: false,
+    );
 
     currentComponent = idleComponent;
     add(idleComponent);
