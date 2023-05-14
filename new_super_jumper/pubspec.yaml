@@ -4,16 +4,16 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  flame: ^1.7.2
-  flame_forge2d: ^0.13.0
-  shared_preferences: ^2.1.0
-  sensors_plus: ^2.0.2
+  flame: ^1.7.3
+  flame_forge2d: ^0.13.0+1
+  shared_preferences: ^2.1.1
+  sensors_plus: ^3.0.0
 
 dev_dependencies:
   flutter_test:
