@@ -69,18 +69,27 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: c38e1be5827aa839c166c6ed08a2733bb4523bf153d8c670739c20c842fa1844
+      sha256: "6954277d14731fa497a7a878bb34cf01c090b20e3ffe5c6e093a7c1f823bfac5"
       url: "https://pub.dev"
     source: hosted
-    version: "1.7.3"
+    version: "1.8.0"
   flame_forge2d:
     dependency: "direct main"
     description:
       name: flame_forge2d
-      sha256: "23a6b3a57f5a5a60ed64ea87ca38453fde9fac97a7479d44209464a58ad1efa8"
+      sha256: fa209e5c3e87e4d6959b59acac47074a2592ad1e6694e018b64122135350ce9a
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.0+1"
+    version: "0.14.0"
+  flame_texturepacker:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: f77ce1180fd58ba66b1a34b8a6b65d8de02d423f
+      resolved-ref: f77ce1180fd58ba66b1a34b8a6b65d8de02d423f
+      url: "https://github.com/Brixto/flame_texturepacker"
+    source: git
+    version: "2.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -90,10 +99,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -220,10 +229,10 @@ packages:
     dependency: "direct main"
     description:
       name: sensors_plus
-      sha256: "11a4205652d7d456071f3c0f42019c3c18c0db8d6d02356a05902de43b906306"
+      sha256: "10d3aa4071121d06351e9ba555cc25e83273314a3faab1cee12f9d886eff7426"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.2"
   sensors_plus_platform_interface:
     dependency: transitive
     description:
@@ -236,10 +245,10 @@ packages:
     dependency: "direct main"
     description:
       name: shared_preferences
-      sha256: "16d3fb6b3692ad244a695c0183fca18cf81fd4b821664394a781de42386bf022"
+      sha256: "396f85b8afc6865182610c0a2fc470853d56499f75f7499e2a73a9f0539d23d0"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   shared_preferences_android:
     dependency: transitive
     description:
@@ -366,5 +375,5 @@ packages:
     source: hosted
     version: "0.2.0+3"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.0.3 <4.0.0"
   flutter: ">=3.3.0"

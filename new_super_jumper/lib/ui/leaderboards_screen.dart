@@ -1,4 +1,6 @@
+import 'package:flame/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/high_scores.dart';
 import 'package:new_super_jumper/ui/widgets/my_text.dart';
 
@@ -15,7 +17,7 @@ class LeaderboardScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.png'),
+                image: AssetImage('assets/ui/background.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -25,7 +27,9 @@ class LeaderboardScreen extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      icon: Image.asset('assets/images/ui/buttonBack.png'),
+                      icon: SpriteWidget(
+                        sprite: Assets.buttonBack,
+                      ),
                       onPressed: () => Navigator.of(context).pop(),
                     )
                   ],

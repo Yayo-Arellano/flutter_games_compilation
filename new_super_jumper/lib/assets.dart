@@ -1,9 +1,10 @@
 import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
+import 'package:flame_texturepacker/atlas/texture_atlas.dart';
 
 class Assets {
   static late final Sprite button;
   static late final Sprite buttonPause;
+  static late final Sprite buttonBack;
 
   static late final Sprite background;
 
@@ -57,19 +58,21 @@ class Assets {
   static late final Sprite platformPinkRight;
 
   static Future<void> load() async {
-    button = await _loadSprite('ui/button.png');
-    buttonPause = await _loadSprite('ui/buttonPause.png');
-    background = await _loadSprite('background.png');
+    final atlas = await TextureAtlas().load('atlasMap.atlas');
+    button = atlas.findSpriteByName('button')!;
+    buttonPause = atlas.findSpriteByName('buttonPause')!;
+    buttonBack = atlas.findSpriteByName('buttonBack')!;
+    background = atlas.findSpriteByName('background')!;
 
-    heroFall = await _loadSprite('heroFall.png');
-    heroJump = await _loadSprite('heroJump.png');
+    heroFall = atlas.findSpriteByName('heroFall')!;
+    heroJump = atlas.findSpriteByName('heroJump')!;
 
-    cloudHappyEnemy = await _loadSprite('HappyCloud.png');
-    cloudAngryEnemy = await _loadSprite('AngryCloud.png');
-    final enemy1 = await _loadSprite('HearthEnemy1.png');
-    final enemy2 = await _loadSprite('HearthEnemy2.png');
-    final lightning1 = await _loadItem('Lightning1');
-    final lightning2 = await _loadItem('Lightning2');
+    cloudHappyEnemy = atlas.findSpriteByName('HappyCloud')!;
+    cloudAngryEnemy = atlas.findSpriteByName('AngryCloud')!;
+    final enemy1 = atlas.findSpriteByName('HearthEnemy1')!;
+    final enemy2 = atlas.findSpriteByName('HearthEnemy2')!;
+    final lightning1 = atlas.findSpriteByName('Lightning1')!;
+    final lightning2 = atlas.findSpriteByName('Lightning2')!;
 
     hearthEnemy = SpriteAnimation.spriteList([
       enemy1,
@@ -81,69 +84,61 @@ class Assets {
       lightning2,
     ], stepTime: 0.15, loop: true);
 
-    coin = await _loadItem('Coin');
-    gun = await _loadItem('Pistol');
-    bullet = await _loadItem('Bullet');
-    spring = await _loadItem('Spring');
-    bubbleSmall = await _loadItem('Bubble_Small');
-    jetpackSmall = await _loadItem('Jetpack_Small');
-    bubble = await _loadItem('Bubble_Big');
-    jetpack = await _loadItem('Jetpack_Big');
+    coin = atlas.findSpriteByName('Coin')!;
+    gun = atlas.findSpriteByName('Pistol')!;
+    bullet = atlas.findSpriteByName('Bullet')!;
+    spring = atlas.findSpriteByName('Spring')!;
+    bubbleSmall = atlas.findSpriteByName('Bubble_Small')!;
+    jetpackSmall = atlas.findSpriteByName('Jetpack_Small')!;
+    bubble = atlas.findSpriteByName('Bubble_Big')!;
+    jetpack = atlas.findSpriteByName('Jetpack_Big')!;
 
-    final jetpack1 = await _loadItem('JetFire1');
-    final jetpack2 = await _loadItem('JetFire2');
+    final jetpack1 = atlas.findSpriteByName('JetFire1')!;
+    final jetpack2 = atlas.findSpriteByName('JetFire2')!;
 
     jetpackFire = SpriteAnimation.spriteList([
       jetpack1,
       jetpack2,
     ], stepTime: 0.15, loop: true);
 
-    platformBeige = await _loadPlatform('LandPiece_DarkBeige');
-    platformBeigeLight = await _loadPlatform('LandPiece_LightBeige');
-    platformBeigeBroken = await _loadPlatform('BrokenLandPiece_Beige');
-    platformBeigeLeft = await _loadPlatform('HalfLandPiece_Left_Beige');
-    platformBeigeRight = await _loadPlatform('HalfLandPiece_Right_Beige');
+    platformBeige = atlas.findSpriteByName('LandPiece_DarkBeige')!;
+    platformBeigeLight = atlas.findSpriteByName('LandPiece_LightBeige')!;
+    platformBeigeBroken = atlas.findSpriteByName('BrokenLandPiece_Beige')!;
+    platformBeigeLeft = atlas.findSpriteByName('HalfLandPiece_Left_Beige')!;
+    platformBeigeRight = atlas.findSpriteByName('HalfLandPiece_Right_Beige')!;
 
-    platformBlue = await _loadPlatform('LandPiece_DarkBlue');
-    platformBlueLight = await _loadPlatform('LandPiece_LightBlue');
-    platformBlueBroken = await _loadPlatform('BrokenLandPiece_Blue');
-    platformBlueLeft = await _loadPlatform('HalfLandPiece_Left_Blue');
-    platformBlueRight = await _loadPlatform('HalfLandPiece_Right_Blue');
+    platformBlue = atlas.findSpriteByName('LandPiece_DarkBlue')!;
+    platformBlueLight = atlas.findSpriteByName('LandPiece_LightBlue')!;
+    platformBlueBroken = atlas.findSpriteByName('BrokenLandPiece_Blue')!;
+    platformBlueLeft = atlas.findSpriteByName('HalfLandPiece_Left_Blue')!;
+    platformBlueRight = atlas.findSpriteByName('HalfLandPiece_Right_Blue')!;
 
-    platformGray = await _loadPlatform('LandPiece_DarkGray');
-    platformGrayLight = await _loadPlatform('LandPiece_LightGray');
-    platformGrayBroken = await _loadPlatform('BrokenLandPiece_Gray');
-    platformGrayLeft = await _loadPlatform('HalfLandPiece_Left_Gray');
-    platformGrayRight = await _loadPlatform('HalfLandPiece_Right_Gray');
+    platformGray = atlas.findSpriteByName('LandPiece_DarkGray')!;
+    platformGrayLight = atlas.findSpriteByName('LandPiece_LightGray')!;
+    platformGrayBroken = atlas.findSpriteByName('BrokenLandPiece_Gray')!;
+    platformGrayLeft = atlas.findSpriteByName('HalfLandPiece_Left_Gray')!;
+    platformGrayRight = atlas.findSpriteByName('HalfLandPiece_Right_Gray')!;
 
-    platformGreen = await _loadPlatform('LandPiece_DarkGreen');
-    platformGreenLight = await _loadPlatform('LandPiece_LightGreen');
-    platformGreenBroken = await _loadPlatform('BrokenLandPiece_Green');
-    platformGreenLeft = await _loadPlatform('HalfLandPiece_Left_Green');
-    platformGreenRight = await _loadPlatform('HalfLandPiece_Right_Green');
+    platformGreen = atlas.findSpriteByName('LandPiece_DarkGreen')!;
+    platformGreenLight = atlas.findSpriteByName('LandPiece_LightGreen')!;
+    platformGreenBroken = atlas.findSpriteByName('BrokenLandPiece_Green')!;
+    platformGreenLeft = atlas.findSpriteByName('HalfLandPiece_Left_Green')!;
+    platformGreenRight = atlas.findSpriteByName('HalfLandPiece_Right_Green')!;
 
-    platformMulticolor = await _loadPlatform('LandPiece_DarkMulticolored');
-    platformMulticolorLight = await _loadPlatform('LandPiece_LightMulticolored');
-    platformMulticolorBroken = await _loadPlatform('BrokenLandPiece_Multicolored');
-    platformMulticolorLeft = await _loadPlatform('HalfLandPiece_Left_Multicolored');
-    platformMulticolorRight = await _loadPlatform('HalfLandPiece_Right_Multicolored');
+    platformMulticolor = atlas.findSpriteByName('LandPiece_DarkMulticolored')!;
+    platformMulticolorLight =
+        atlas.findSpriteByName('LandPiece_LightMulticolored')!;
+    platformMulticolorBroken =
+        atlas.findSpriteByName('BrokenLandPiece_Multicolored')!;
+    platformMulticolorLeft =
+        atlas.findSpriteByName('HalfLandPiece_Left_Multicolored')!;
+    platformMulticolorRight =
+        atlas.findSpriteByName('HalfLandPiece_Right_Multicolored')!;
 
-    platformPink = await _loadPlatform('LandPiece_DarkPink');
-    platformPinkLight = await _loadPlatform('LandPiece_LightPink');
-    platformPinkBroken = await _loadPlatform('BrokenLandPiece_Pink');
-    platformPinkLeft = await _loadPlatform('HalfLandPiece_Left_Pink');
-    platformPinkRight = await _loadPlatform('HalfLandPiece_Right_Pink');
-  }
-
-  static Future<Sprite> _loadPlatform(String name) {
-    return _loadSprite('platforms/$name.png');
-  }
-
-  static Future<Sprite> _loadItem(String name) {
-    return _loadSprite('items/$name.png');
-  }
-
-  static Future<Sprite> _loadSprite(String name) async {
-    return Sprite(await Flame.images.load(name));
+    platformPink = atlas.findSpriteByName('LandPiece_DarkPink')!;
+    platformPinkLight = atlas.findSpriteByName('LandPiece_LightPink')!;
+    platformPinkBroken = atlas.findSpriteByName('BrokenLandPiece_Pink')!;
+    platformPinkLeft = atlas.findSpriteByName('HalfLandPiece_Left_Pink')!;
+    platformPinkRight = atlas.findSpriteByName('HalfLandPiece_Right_Pink')!;
   }
 }

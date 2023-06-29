@@ -1,5 +1,6 @@
 import 'package:flame/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/ui/widgets/my_text.dart';
 
 class MyButton extends StatelessWidget {
@@ -14,9 +15,9 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpriteButton.asset(
-      path: 'ui/button.png',
-      pressedPath: 'ui/button.png',
+    return SpriteButton.future(
+      sprite: Future.value(Assets.button),
+      pressedSprite: Future.value(Assets.button),
       onPressed: onPressed,
       height: 50,
       width: 120,

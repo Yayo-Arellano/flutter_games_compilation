@@ -1,0 +1,377 @@
+
+atlasMap.png
+size: 1024, 1024
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+AngryCloud
+  rotate: false
+  xy: 2, 10
+  size: 155, 84
+  orig: 155, 84
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Beige
+  rotate: true
+  xy: 961, 909
+  size: 113, 48
+  orig: 113, 48
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Blue
+  rotate: true
+  xy: 432, 581
+  size: 113, 48
+  orig: 113, 48
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Gray
+  rotate: false
+  xy: 265, 46
+  size: 113, 48
+  orig: 113, 48
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Green
+  rotate: false
+  xy: 589, 813
+  size: 113, 48
+  orig: 113, 48
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Multicolored
+  rotate: false
+  xy: 704, 814
+  size: 113, 47
+  orig: 113, 47
+  offset: 0, 0
+  index: -1
+BrokenLandPiece_Pink
+  rotate: false
+  xy: 846, 904
+  size: 113, 48
+  orig: 113, 48
+  offset: 0, 0
+  index: -1
+Bubble_Big
+  rotate: false
+  xy: 432, 696
+  size: 83, 80
+  orig: 83, 80
+  offset: 0, 0
+  index: -1
+Bubble_Small
+  rotate: false
+  xy: 394, 8
+  size: 27, 36
+  orig: 27, 36
+  offset: 0, 0
+  index: -1
+Bullet
+  rotate: false
+  xy: 486, 157
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+Coin
+  rotate: true
+  xy: 583, 599
+  size: 26, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Beige
+  rotate: true
+  xy: 537, 526
+  size: 68, 46
+  orig: 68, 46
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Blue
+  rotate: false
+  xy: 954, 855
+  size: 68, 47
+  orig: 68, 47
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Gray
+  rotate: false
+  xy: 954, 807
+  size: 68, 46
+  orig: 68, 46
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Green
+  rotate: true
+  xy: 497, 98
+  size: 68, 46
+  orig: 68, 46
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Multicolored
+  rotate: false
+  xy: 445, 2
+  size: 68, 44
+  orig: 68, 44
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Left_Pink
+  rotate: false
+  xy: 486, 168
+  size: 68, 47
+  orig: 68, 47
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Beige
+  rotate: false
+  xy: 432, 98
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Blue
+  rotate: false
+  xy: 583, 627
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Gray
+  rotate: false
+  xy: 510, 48
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Green
+  rotate: false
+  xy: 380, 46
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Multicolored
+  rotate: false
+  xy: 593, 677
+  size: 63, 47
+  orig: 63, 47
+  offset: 0, 0
+  index: -1
+HalfLandPiece_Right_Pink
+  rotate: false
+  xy: 445, 48
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+HappyCloud
+  rotate: false
+  xy: 432, 778
+  size: 155, 83
+  orig: 155, 83
+  offset: 0, 0
+  index: -1
+HearthEnemy1
+  rotate: false
+  xy: 846, 954
+  size: 113, 68
+  orig: 113, 68
+  offset: 0, 0
+  index: -1
+HearthEnemy2
+  rotate: false
+  xy: 159, 32
+  size: 104, 62
+  orig: 104, 62
+  offset: 0, 0
+  index: -1
+JetFire1
+  rotate: true
+  xy: 334, 8
+  size: 36, 58
+  orig: 36, 58
+  offset: 0, 0
+  index: -1
+JetFire2
+  rotate: true
+  xy: 515, 11
+  size: 35, 58
+  orig: 35, 58
+  offset: 0, 0
+  index: -1
+Jetpack_Big
+  rotate: true
+  xy: 265, 2
+  size: 42, 67
+  orig: 42, 67
+  offset: 0, 0
+  index: -1
+Jetpack_Small
+  rotate: false
+  xy: 658, 688
+  size: 26, 36
+  orig: 26, 36
+  offset: 0, 0
+  index: -1
+LandPiece_DarkBeige
+  rotate: false
+  xy: 593, 726
+  size: 106, 52
+  orig: 106, 52
+  offset: 0, 0
+  index: -1
+LandPiece_DarkBlue
+  rotate: true
+  xy: 432, 472
+  size: 107, 52
+  orig: 107, 52
+  offset: 0, 0
+  index: -1
+LandPiece_DarkGray
+  rotate: true
+  xy: 432, 148
+  size: 106, 52
+  orig: 106, 52
+  offset: 0, 0
+  index: -1
+LandPiece_DarkGreen
+  rotate: true
+  xy: 432, 364
+  size: 106, 52
+  orig: 106, 52
+  offset: 0, 0
+  index: -1
+LandPiece_DarkMulticolored
+  rotate: false
+  xy: 846, 853
+  size: 106, 49
+  orig: 106, 49
+  offset: 0, 0
+  index: -1
+LandPiece_DarkPink
+  rotate: false
+  xy: 705, 764
+  size: 99, 48
+  orig: 99, 48
+  offset: 0, 0
+  index: -1
+LandPiece_LightBeige
+  rotate: true
+  xy: 532, 596
+  size: 99, 49
+  orig: 99, 49
+  offset: 0, 0
+  index: -1
+LandPiece_LightBlue
+  rotate: false
+  xy: 701, 714
+  size: 99, 48
+  orig: 99, 48
+  offset: 0, 0
+  index: -1
+LandPiece_LightGray
+  rotate: true
+  xy: 486, 494
+  size: 99, 49
+  orig: 99, 49
+  offset: 0, 0
+  index: -1
+LandPiece_LightGreen
+  rotate: true
+  xy: 482, 595
+  size: 99, 48
+  orig: 99, 48
+  offset: 0, 0
+  index: -1
+LandPiece_LightMulticolored
+  rotate: true
+  xy: 486, 394
+  size: 98, 48
+  orig: 98, 48
+  offset: 0, 0
+  index: -1
+LandPiece_LightPink
+  rotate: true
+  xy: 432, 256
+  size: 106, 52
+  orig: 106, 52
+  offset: 0, 0
+  index: -1
+Lightning1
+  rotate: true
+  xy: 159, 2
+  size: 28, 102
+  orig: 28, 102
+  offset: 0, 0
+  index: -1
+Lightning2
+  rotate: true
+  xy: 589, 780
+  size: 31, 114
+  orig: 31, 114
+  offset: 0, 0
+  index: -1
+Pistol
+  rotate: false
+  xy: 819, 825
+  size: 25, 36
+  orig: 25, 36
+  offset: 0, 0
+  index: -1
+Spring
+  rotate: false
+  xy: 536, 402
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 96
+  size: 428, 926
+  orig: 428, 926
+  offset: 0, 0
+  index: -1
+button
+  rotate: true
+  xy: 486, 298
+  size: 94, 45
+  orig: 94, 45
+  offset: 0, 0
+  index: -1
+buttonBack
+  rotate: false
+  xy: 537, 479
+  size: 47, 45
+  orig: 47, 45
+  offset: 0, 0
+  index: -1
+buttonPause
+  rotate: false
+  xy: 536, 432
+  size: 47, 45
+  orig: 47, 45
+  offset: 0, 0
+  index: -1
+heroFall
+  rotate: false
+  xy: 517, 697
+  size: 74, 79
+  orig: 74, 79
+  offset: 0, 0
+  index: -1
+heroJump
+  rotate: false
+  xy: 486, 217
+  size: 74, 79
+  orig: 74, 79
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 432, 863
+  size: 412, 159
+  orig: 412, 159
+  offset: 0, 0
+  index: -1

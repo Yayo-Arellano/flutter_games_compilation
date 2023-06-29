@@ -10,25 +10,27 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flame: ^1.7.3
-  flame_forge2d: ^0.13.0+1
-  shared_preferences: ^2.1.1
-  sensors_plus: ^3.0.0
+  flame: ^1.8.0
+  flame_forge2d: ^0.14.0
+  shared_preferences: ^2.1.2
+  sensors_plus: ^3.0.2
+  flame_texturepacker:
+    git:
+      url: https://github.com/Brixto/flame_texturepacker
+      ref: f77ce1180fd58ba66b1a34b8a6b65d8de02d423f
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.2
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
-    - assets/images/ui/
-    - assets/images/items/
-    - assets/images/platforms/
+    - assets/
+    - assets/ui/
 
   fonts:
     - family: DaveysDoodleface

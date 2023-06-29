@@ -18,7 +18,7 @@ class MainMenuScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.png'),
+                image: AssetImage('assets/ui/background.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -30,14 +30,14 @@ class MainMenuScreen extends StatelessWidget {
                     Positioned(
                       bottom: constrains.maxHeight * .25,
                       child: Image.asset(
-                        'assets/images/heroJump.png',
+                        'assets/ui/heroJump.png',
                         scale: 1.25,
                       ),
                     ),
                     Positioned(
                       bottom: constrains.maxHeight * .60,
                       child: Image.asset(
-                        'assets/images/platforms/LandPiece_DarkMulticolored.png',
+                        'assets/ui/LandPiece_DarkMulticolored.png',
                         scale: 1.25,
                       ),
                     ),
@@ -45,7 +45,7 @@ class MainMenuScreen extends StatelessWidget {
                       bottom: constrains.maxHeight * .05,
                       left: constrains.maxWidth * .2,
                       child: Image.asset(
-                        'assets/images/platforms/BrokenLandPiece_Beige.png',
+                        'assets/ui/BrokenLandPiece_Beige.png',
                         scale: 1.25,
                       ),
                     ),
@@ -53,7 +53,7 @@ class MainMenuScreen extends StatelessWidget {
                       bottom: constrains.maxHeight * .3,
                       right: 0,
                       child: Image.asset(
-                        'assets/images/platforms/LandPiece_DarkBlue.png',
+                        'assets/ui/LandPiece_DarkBlue.png',
                         scale: 1.5,
                       ),
                     ),
@@ -61,7 +61,7 @@ class MainMenuScreen extends StatelessWidget {
                       top: constrains.maxHeight * .3,
                       right: 0,
                       child: Image.asset(
-                        'assets/images/HappyCloud.png',
+                        'assets/ui/HappyCloud.png',
                         scale: 1.75,
                       ),
                     ),
@@ -69,7 +69,7 @@ class MainMenuScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         const SizedBox(height: 24),
-                        Image.asset('assets/images/title.png'),
+                        Image.asset('assets/ui/title.png'),
                         MyText(
                           'Best Score: ${HighScores.highScores[0]}',
                           fontSize: 26,
