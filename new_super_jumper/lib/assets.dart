@@ -1,5 +1,5 @@
 import 'package:flame/components.dart';
-import 'package:flame_texturepacker/atlas/texture_atlas.dart';
+import 'package:flame_gdx_texture_packer/atlas/texture_atlas.dart';
 
 class Assets {
   static late final Sprite button;

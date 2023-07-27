@@ -14,10 +14,7 @@ dependencies:
   flame_forge2d: ^0.14.0
   shared_preferences: ^2.1.2
   sensors_plus: ^3.0.2
-  flame_texturepacker:
-    git:
-      url: https://github.com/Brixto/flame_texturepacker
-      ref: f77ce1180fd58ba66b1a34b8a6b65d8de02d423f
+  flame_gdx_texture_packer: ^0.5.0
 
 dev_dependencies:
   flutter_test:
