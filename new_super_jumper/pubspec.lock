@@ -69,26 +69,26 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: "12db9de3cd31b86465b0c1ea173020fb71b15df424ca01b665fa5300b24864c8"
+      sha256: bd2b45f9fc0ec4939031b85c0b0a97cf09357c12ecd072d44389a4c577a2c0f0
       url: "https://pub.dev"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   flame_forge2d:
     dependency: "direct main"
     description:
       name: flame_forge2d
-      sha256: "939f221ab7fe1819fcc0452720e2a4fa47ba1474733a1dfe1f328055cb004b1d"
+      sha256: fae89e7074c5afecad8003ab3d246a7f025f6abc4b5e532a14dbf49939d9ac8f
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.1"
+    version: "0.14.1+1"
   flame_gdx_texture_packer:
     dependency: "direct main"
     description:
       name: flame_gdx_texture_packer
-      sha256: "71abb4acbe161969a28e864bb4fabac4ba0afefcb82778e94794697a0bf52b7c"
+      sha256: a1f60ad33bf18ba02aa116b1647a1e54c64ddcd649ce3063e61664a88042e76f
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "0.5.3"
   flutter:
     dependency: "direct main"
     description: flutter

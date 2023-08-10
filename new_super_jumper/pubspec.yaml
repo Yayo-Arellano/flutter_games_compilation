@@ -14,7 +14,7 @@ dependencies:
   flame_forge2d: ^0.14.0
   shared_preferences: ^2.1.2
   sensors_plus: ^3.0.2
-  flame_gdx_texture_packer: ^0.5.0
+  flame_gdx_texture_packer: ^0.5.3
 
 dev_dependencies:
   flutter_test:
