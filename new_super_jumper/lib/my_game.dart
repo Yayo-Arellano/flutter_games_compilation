@@ -199,8 +199,8 @@ class MyGame extends Forge2DGame
     final x = hero.body.position.x;
     final y = hero.body.position.y;
 
-    add(Bullet(x: x, y: y, accelX: -1.5));
-    add(Bullet(x: x, y: y, accelX: 0));
-    add(Bullet(x: x, y: y, accelX: 1.5));
+    world.add(Bullet(x: x, y: y, accelX: -1.5));
+    world.add(Bullet(x: x, y: y, accelX: 0));
+    world.add(Bullet(x: x, y: y, accelX: 1.5));
   }
 }

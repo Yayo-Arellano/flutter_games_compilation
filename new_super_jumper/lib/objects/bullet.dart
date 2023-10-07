@@ -21,7 +21,7 @@ class Bullet extends BodyComponent<MyGame> with ContactCallbacks {
     await super.onLoad();
     // renderBody = false;
 
-    world.add(
+    add(
       SpriteComponent(
         sprite: Assets.bullet,
         size: size,
