@@ -32,11 +32,11 @@ class Lightning extends BodyComponent<MyGame> {
     super.update(dt);
     _position = body.position;
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
     
     if (isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

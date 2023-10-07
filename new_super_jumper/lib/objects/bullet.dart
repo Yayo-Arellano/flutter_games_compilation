@@ -21,7 +21,7 @@ class Bullet extends BodyComponent<MyGame> with ContactCallbacks {
     await super.onLoad();
     // renderBody = false;
 
-    add(
+    world.add(
       SpriteComponent(
         sprite: Assets.bullet,
         size: size,
@@ -38,11 +38,11 @@ class Bullet extends BodyComponent<MyGame> with ContactCallbacks {
   void update(double dt) {
     super.update(dt);
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
 
     if (isTaken || isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

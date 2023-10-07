@@ -6,9 +6,9 @@ class Floor extends BodyComponent<MyGame> {
   void update(double dt) {
     super.update(dt);
 
-    if (gameRef.isOutOfScreen(body.position)) {
+    if (game.isOutOfScreen(body.position)) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

@@ -113,12 +113,12 @@ class Platform extends BodyComponent<MyGame> {
   void update(double dt) {
     super.update(dt);
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
 
     if (destroy || isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
-      if (type.isBroken) gameRef.addBrokenPlatformPieces(this);
+      world.remove(this);
+      if (type.isBroken) game.addBrokenPlatformPieces(this);
     }
   }
 

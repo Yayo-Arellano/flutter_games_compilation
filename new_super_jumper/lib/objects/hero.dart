@@ -23,7 +23,8 @@ enum HeroState {
 
 const _durationJetpack = 3.0;
 
-class MyHero extends BodyComponent<MyGame> with ContactCallbacks, KeyboardHandler {
+class MyHero extends BodyComponent<MyGame>
+    with ContactCallbacks, KeyboardHandler {
   static final size = Vector2(.75, .80);
 
   var state = HeroState.fall;
@@ -113,19 +114,19 @@ class MyHero extends BodyComponent<MyGame> with ContactCallbacks, KeyboardHandle
 
   void takeCoin() {
     if (state == HeroState.dead) return;
-    gameRef.coins++;
+    game.coins++;
     final velocity = body.linearVelocity;
     body.linearVelocity = Vector2(velocity.x, -8.5);
   }
 
   void takeBullet() {
     if (state == HeroState.dead) return;
-    gameRef.bullets += 25;
+    game.bullets += 25;
   }
 
   void fireBullet() {
     if (state == HeroState.dead) return;
-    gameRef.addBullets();
+    game.addBullets();
   }
 
   @override
@@ -189,7 +190,7 @@ class MyHero extends BodyComponent<MyGame> with ContactCallbacks, KeyboardHandle
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: Vector2(worldSize.x / 2, worldSize.y - 1),
+      position: Vector2(worldSize.x / 2, worldSize.y - 0.5),
       type: BodyType.dynamic,
     );
 
@@ -272,10 +273,5 @@ class MyHero extends BodyComponent<MyGame> with ContactCallbacks, KeyboardHandle
     }
 
     return false;
-  }
-
-  @override
-  void onRemove() {
-    super.onRemove();
   }
 }

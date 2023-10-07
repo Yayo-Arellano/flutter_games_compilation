@@ -14,7 +14,7 @@ final textPaint = TextPaint(
   ),
 );
 
-class GameUI extends PositionComponent with HasGameRef<MyGame>{
+class GameUI extends PositionComponent with HasGameRef<MyGame> {
   // Keep track of the number of bodies in the world.
   final totalBodies =
       TextComponent(position: Vector2(5, 895), textRenderer: textPaint);
@@ -35,19 +35,18 @@ class GameUI extends PositionComponent with HasGameRef<MyGame>{
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    positionType = PositionType.viewport;
     position.y = isIOS ? 25 : 0;
-    priority = 3;
-
     final btPause = SpriteButtonComponent(
-        button: Assets.buttonPause,
-        size: Vector2(35, 35),
-        position: Vector2(390, 40),
-        onPressed: () {
-          findGame()?.overlays.add('PauseMenu');
-          findGame()?.paused = true;
-        })
-      ..positionType = PositionType.viewport;
+      button: Assets.buttonPause,
+      buttonDown: Assets.buttonBack,
+      size: Vector2(35, 35),
+      position: Vector2(0, 120),
+      priority: 10,
+      onPressed: () {
+        gameRef.overlays.add('PauseMenu');
+        gameRef.paused = true;
+      },
+    );
 
     add(btPause);
     add(coin);
@@ -62,8 +61,7 @@ class GameUI extends PositionComponent with HasGameRef<MyGame>{
   @override
   void update(double dt) {
     super.update(dt);
-
-    totalBodies.text = 'Bodies: ${gameRef.world.bodies.length}';
+    totalBodies.text = 'Bodies: ${game.world.physicsWorld.bodies.length}';
     totalScore.text = 'Score ${gameRef.score}';
     totalCoins.text = 'x${gameRef.coins}';
     totalBullets.text = 'x${gameRef.bullets}';
@@ -87,4 +85,10 @@ class GameUI extends PositionComponent with HasGameRef<MyGame>{
       ..x = screenSize.x / 2 - totalScore.size.x / 2
       ..y = 5;
   }
+
+// @override
+// void render(Canvas canvas) {
+//   canvas.drawRect(Rect.fromLTWH(0, 0, size.x, size.y),
+//       BasicPalette.blue.paint());
+// }
 }

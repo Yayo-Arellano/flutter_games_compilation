@@ -35,11 +35,11 @@ class Coin extends BodyComponent<MyGame> {
   void update(double dt) {
     super.update(dt);
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
 
     if (isTaken || isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

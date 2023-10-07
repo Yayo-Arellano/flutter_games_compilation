@@ -49,17 +49,17 @@ class CloudEnemy extends BodyComponent<MyGame> {
     timeForNextLightning += dt;
     if (timeForNextLightning > _timeForNextLightning) {
       timeForNextLightning -= _timeForNextLightning;
-      gameRef.add(Lightning(
+      world.add(Lightning(
         x: _position.x,
         y: _position.y + 0.5,
       ));
     }
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
 
     if (destroy || isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

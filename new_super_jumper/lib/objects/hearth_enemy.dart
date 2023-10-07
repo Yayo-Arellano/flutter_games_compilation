@@ -41,11 +41,11 @@ class HearthEnemy extends BodyComponent<MyGame> {
       body.linearVelocity = Vector2(speed, 0);
     }
 
-    bool isOutOfScreen = gameRef.isOutOfScreen(body.position);
+    bool isOutOfScreen = game.isOutOfScreen(body.position);
 
     if (destroy || isOutOfScreen) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      world.remove(this);
     }
   }
 

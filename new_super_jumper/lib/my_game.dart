@@ -1,12 +1,11 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
-import 'package:flame/game.dart';
+import 'package:flame/experimental.dart';
 import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
-import 'package:flutter/material.dart';
-import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/high_scores.dart';
+import 'package:new_super_jumper/objects/background.dart';
 import 'package:new_super_jumper/objects/bullet.dart';
 import 'package:new_super_jumper/objects/cloud_enemy.dart';
 import 'package:new_super_jumper/objects/coin.dart';
@@ -40,32 +39,37 @@ class MyGame extends Forge2DGame
   var state = GameState.running;
 
   // Scale the screenSize by 100 and set the gravity of 15
-  MyGame() : super(zoom: 100, gravity: Vector2(0, 9.8));
+  MyGame()
+      : super(
+            zoom: 100,
+            cameraComponent: CameraComponent.withFixedResolution(
+              width: screenSize.x / 100,
+              height: screenSize.y / 100,
+            ),
+            gravity: Vector2(0, 9.8));
 
   @override
   Future<void> onLoad() async {
-    camera.viewport = FixedResolutionViewport(screenSize);
-
-    final background = SpriteComponent(
-      sprite: Assets.background,
-      size: screenSize,
-    )..positionType = PositionType.viewport;
-
     // Adds a black background to the viewport
-    add(background);
+    camera.backdrop.add(Background());
+    camera.viewfinder.add(GameUI()..size = screenSize);
+    // camera.viewfinder.anchor = Anchor.center;
 
-    add(GameUI());
-
-    add(Floor());
+    world.add(Floor());
     hero = MyHero();
 
     // generateNextSectionOfWorld();
 
-    await add(hero);
+    world.add(hero);
 
-    final worldBounds =
-        Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
-    camera.followBodyComponent(hero, worldBounds: worldBounds);
+    final worldBounds = Rectangle.fromLTRB(
+      worldSize.x / 2,
+      -double.infinity,
+      worldSize.x / 2,
+      worldSize.y / 2,
+    );
+    camera.follow(hero);
+    camera.setBounds(worldBounds);
   }
 
   @override
@@ -107,33 +111,34 @@ class MyGame extends Forge2DGame
 
   void generateNextSectionOfWorld() {
     for (int i = 0; i < 10; i++) {
-      add(Platform(
+      world.add(Platform(
         x: worldSize.x * random.nextDouble(),
         y: generatedWorldHeight,
       ));
-      add(Platform(
-        x: worldSize.x * random.nextDouble(),
-        y: generatedWorldHeight,
-      ));
+      if (random.nextDouble() < .8) {
+        world.add(Platform(
+          x: worldSize.x * random.nextDouble(),
+          y: generatedWorldHeight - 3 + (random.nextDouble() * 6),
+        ));
+      }
 
       if (random.nextBool()) {
-        add(HearthEnemy(
+        world.add(HearthEnemy(
           x: worldSize.x * random.nextDouble(),
           y: generatedWorldHeight - 1.5,
         ));
       } else if (random.nextDouble() < .2) {
-        add(CloudEnemy(
+        world.add(CloudEnemy(
           x: worldSize.x * random.nextDouble(),
           y: generatedWorldHeight - 1.5,
         ));
       }
-
       if (random.nextDouble() < .3) {
-        add(PowerUp(
+        world.add(PowerUp(
           x: worldSize.x * random.nextDouble(),
           y: generatedWorldHeight - 1.5,
         ));
-        if (random.nextDouble() < .2) {
+        if (random.nextDouble() < 21.2) {
           addCoins();
         }
       }
@@ -160,8 +165,8 @@ class MyGame extends Forge2DGame
       type: platform.type,
     );
 
-    add(leftSide);
-    add(rightSide);
+    world.add(leftSide);
+    world.add(rightSide);
   }
 
   void addCoins() {
@@ -173,7 +178,7 @@ class MyGame extends Forge2DGame
 
     for (int col = 0; col < cols; col++) {
       for (int row = 0; row <= rows; row++) {
-        add(Coin(
+        world.add(Coin(
           x: x + (col * Coin.size.x),
           y: generatedWorldHeight + (row * Coin.size.y) - 2,
         ));
