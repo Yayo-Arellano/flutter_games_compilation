@@ -11,8 +11,8 @@ class GameLesson04 extends MyGame with TapDetector {
   Future<void> onLoad() async {
     super.onLoad();
 
-    add(Floor());
-    addAll(balls);
+    world.add(Floor());
+    world.addAll(balls);
   }
 
   @override

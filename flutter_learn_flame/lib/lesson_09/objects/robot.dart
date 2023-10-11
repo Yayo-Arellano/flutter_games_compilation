@@ -31,18 +31,18 @@ class Robot extends BodyComponent with KeyboardHandler {
     await super.onLoad();
     renderBody = false;
 
-    final duck = await gameRef.loadSprite('robot/robot_duck.png');
-    final fall = await gameRef.loadSprite('robot/robot_fall.png');
-    final idle = await gameRef.loadSprite('robot/robot_idle.png');
-    final jump = await gameRef.loadSprite('robot/robot_jump.png');
-    final walk0 = await gameRef.loadSprite('robot/robot_walk0.png');
-    final walk1 = await gameRef.loadSprite('robot/robot_walk1.png');
-    final walk2 = await gameRef.loadSprite('robot/robot_walk2.png');
-    final walk3 = await gameRef.loadSprite('robot/robot_walk3.png');
-    final walk4 = await gameRef.loadSprite('robot/robot_walk4.png');
-    final walk5 = await gameRef.loadSprite('robot/robot_walk5.png');
-    final walk6 = await gameRef.loadSprite('robot/robot_walk6.png');
-    final walk7 = await gameRef.loadSprite('robot/robot_walk7.png');
+    final duck = await game.loadSprite('robot/robot_duck.png');
+    final fall = await game.loadSprite('robot/robot_fall.png');
+    final idle = await game.loadSprite('robot/robot_idle.png');
+    final jump = await game.loadSprite('robot/robot_jump.png');
+    final walk0 = await game.loadSprite('robot/robot_walk0.png');
+    final walk1 = await game.loadSprite('robot/robot_walk1.png');
+    final walk2 = await game.loadSprite('robot/robot_walk2.png');
+    final walk3 = await game.loadSprite('robot/robot_walk3.png');
+    final walk4 = await game.loadSprite('robot/robot_walk4.png');
+    final walk5 = await game.loadSprite('robot/robot_walk5.png');
+    final walk6 = await game.loadSprite('robot/robot_walk6.png');
+    final walk7 = await game.loadSprite('robot/robot_walk7.png');
 
     duckComponent = SpriteComponent(
       sprite: duck,

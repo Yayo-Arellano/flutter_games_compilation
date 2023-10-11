@@ -31,7 +31,7 @@ class Coin extends BodyComponent with ContactCallbacks {
 
     if (isTaken) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      game.world.remove(this);
     }
   }
 

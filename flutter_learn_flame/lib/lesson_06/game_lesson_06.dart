@@ -13,16 +13,16 @@ class GameLesson06 extends MyGame with TapDetector {
     await loadSprite('ball.png');
     await loadSprite('box.png');
 
-    add(Floor());
+    world.add(Floor());
   }
 
   @override
   void onTapDown(TapDownInfo info) {
     super.onTapDown(info);
     if (Random().nextBool()) {
-      add(Ball());
+      world.add(Ball());
     } else {
-      add(Box());
+      world.add(Box());
     }
   }
 }

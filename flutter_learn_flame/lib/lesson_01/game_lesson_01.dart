@@ -5,6 +5,6 @@ class GameLesson01 extends MyGame {
   @override
   Future<void> onLoad() async {
     super.onLoad();
-    add(Ball());
+    world.add(Ball());
   }
 }

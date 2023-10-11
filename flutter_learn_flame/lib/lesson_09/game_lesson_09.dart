@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
-import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_learn_flame/lesson_09/objects/coin.dart';
@@ -48,7 +47,7 @@ class GameLesson09 extends MyGame {
 
     await loadSprite('platform.png');
 
-    add(Floor());
+    world.add(Floor());
 
     final ran = Random();
     const previousX = 0;
@@ -56,8 +55,8 @@ class GameLesson09 extends MyGame {
       var x = (ran.nextDouble() * (worldSize.x - 6)) + 3;
 
       final y = 4.0 - (i * 3);
-      add(Platform(x: x, y: y));
-      add(Coin(x: x, y: y - 1));
+      world.add(Platform(x: x, y: y));
+      world.add(Coin(x: x, y: y - 1));
     }
 
     // add(Platform(x: 3, y: 4));
@@ -71,12 +70,12 @@ class GameLesson09 extends MyGame {
     // add(Platform(x: 5, y: -8));
     // add(Platform(x: 7, y: -11));
     // add(Platform(x: 9, y: -14));
-    await add(robot);
+    await world.add(robot);
     //
     // final worldBounds =
     //     Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
     // camera.followBodyComponent(robot, worldBounds: worldBounds);
-    camera.followBodyComponent(robot);
+    camera.follow(robot);
   }
 
   @override

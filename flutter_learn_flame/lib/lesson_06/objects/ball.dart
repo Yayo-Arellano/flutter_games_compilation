@@ -10,7 +10,7 @@ class Ball extends BodyComponent with ContactCallbacks {
   Future<void> onLoad() async {
     await super.onLoad();
     renderBody = false;
-    final sprite = Sprite(gameRef.images.fromCache('ball.png'));
+    final sprite = Sprite(game.images.fromCache('ball.png'));
     add(
       SpriteComponent(
         sprite: sprite,
@@ -26,7 +26,7 @@ class Ball extends BodyComponent with ContactCallbacks {
 
     if (state == ObjectState.explode) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      game.world.remove(this);
     }
   }
 

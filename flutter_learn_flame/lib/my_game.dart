@@ -16,32 +16,37 @@ final worldSize = Vector2(12.8, 7.2);
 
 class MyGame extends Forge2DGame with KeyboardEvents {
   // Keep track of the number of bodies in the world.
-  final totalBodies = TextComponent(position: Vector2(5, 690))
-    ..positionType = PositionType.viewport;
+  final totalBodies = TextComponent(position: Vector2(5, 690));
 
   // Keep track of the frames per second
   final fps = FpsTextComponent(position: Vector2(5, 665));
 
   // Scale the screenSize by 100 and set the gravity of 15
-  MyGame() : super(zoom: 100, gravity: Vector2(0, 15));
+  MyGame()
+      : super(
+            zoom: 100,
+            cameraComponent: CameraComponent.withFixedResolution(
+              width: screenSize.x,
+              height: screenSize.y,
+            ),
+            gravity: Vector2(0, 15));
 
   @override
   Future<void> onLoad() async {
-    // Set the FixedResolutionViewport
-    camera.viewport = FixedResolutionViewport(screenSize);
+    camera.viewfinder.anchor= Anchor.topLeft;
 
-    // Adds a black background to the viewport
-    add(_Background(size: screenSize)..positionType = PositionType.viewport);
+    // Adds a black background to the backdrop
+    camera.backdrop.add(_Background(size: screenSize));
 
-    add(fps);
-    add(totalBodies);
+    camera.viewport.add(fps);
+    camera.viewport.add(totalBodies);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
     // Updated the number of bodies in the world
-    totalBodies.text = 'Bodies: ${world.bodies.length}';
+    totalBodies.text = 'Bodies: ${world.physicsWorld.bodies.length}';
   }
 
   @override

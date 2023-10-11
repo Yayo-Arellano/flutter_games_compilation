@@ -58,16 +58,16 @@ class GameLesson07 extends MyGame with TapDetector {
       exp19
     ], stepTime: 0.05, loop: false);
 
-    add(Floor());
+    world.add(Floor());
   }
 
   @override
   void onTapDown(TapDownInfo info) {
     super.onTapDown(info);
     if (Random.secure().nextBool()) {
-      add(Ball());
+      world.add(Ball());
     } else {
-      add(Box());
+      world.add(Box());
     }
   }
 }

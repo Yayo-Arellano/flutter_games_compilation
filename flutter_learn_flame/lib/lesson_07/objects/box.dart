@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter_learn_flame/lesson_07/game_lesson_07.dart';
@@ -14,7 +12,7 @@ class Box extends BodyComponent with ContactCallbacks {
   Future<void> onLoad() async {
     await super.onLoad();
     renderBody = false;
-    final sprite = Sprite(gameRef.images.fromCache('box.png'));
+    final sprite = Sprite(game.images.fromCache('box.png'));
 
     add(SpriteComponent(
       sprite: sprite,
@@ -29,14 +27,14 @@ class Box extends BodyComponent with ContactCallbacks {
 
     if (state == ObjectState.explode) {
       world.destroyBody(body);
-      gameRef.remove(this);
+      game.world.remove(this);
     }
   }
 
   void hit() {
     if (state == ObjectState.normal) {
       state = ObjectState.explode;
-      gameRef.add(SpriteAnimationComponent(
+      game.world.add(SpriteAnimationComponent(
         position: body.position,
         animation: explosion.clone(),
         anchor: Anchor.center,

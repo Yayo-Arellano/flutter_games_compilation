@@ -6,7 +6,7 @@ class Ball extends BodyComponent {
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    final sprite = Sprite(gameRef.images.fromCache('ball.png'));
+    final sprite = Sprite(game.images.fromCache('ball.png'));
     add(
       SpriteComponent(
         sprite: sprite,

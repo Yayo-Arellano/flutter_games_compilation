@@ -16,8 +16,8 @@ class GameLesson08 extends MyGame {
   Future<void> onLoad() async {
     super.onLoad();
 
-    add(Floor());
-    await add(robot);
+    world.add(Floor());
+    await world.add(robot);
   }
 
   @override
