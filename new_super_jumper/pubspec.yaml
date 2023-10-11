@@ -13,8 +13,8 @@ dependencies:
   flame: ^1.9.1
   flame_forge2d: ^0.15.0+1
   shared_preferences: ^2.2.1
-  sensors_plus: ^3.0.3
-  flame_gdx_texture_packer: ^0.6.0
+  sensors_plus: ^4.0.0
+  flame_gdx_texture_packer: ^0.6.1
 
 dependency_overrides:
   flame:

@@ -43,8 +43,8 @@ class MyGame extends Forge2DGame
       : super(
             zoom: 100,
             cameraComponent: CameraComponent.withFixedResolution(
-              width: screenSize.x / 100,
-              height: screenSize.y / 100,
+              width: screenSize.x,
+              height: screenSize.y,
             ),
             gravity: Vector2(0, 9.8));
 
@@ -52,7 +52,7 @@ class MyGame extends Forge2DGame
   Future<void> onLoad() async {
     // Adds a black background to the viewport
     camera.backdrop.add(Background());
-    camera.viewfinder.add(GameUI()..size = screenSize);
+    camera.viewport.add(GameUI());
     // camera.viewfinder.anchor = Anchor.center;
 
     world.add(Floor());

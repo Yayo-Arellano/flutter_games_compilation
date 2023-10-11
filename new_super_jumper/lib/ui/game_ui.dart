@@ -40,7 +40,7 @@ class GameUI extends PositionComponent with HasGameRef<MyGame> {
       button: Assets.buttonPause,
       buttonDown: Assets.buttonBack,
       size: Vector2(35, 35),
-      position: Vector2(0, 120),
+      position: Vector2(390, 50),
       priority: 10,
       onPressed: () {
         gameRef.overlays.add('PauseMenu');
