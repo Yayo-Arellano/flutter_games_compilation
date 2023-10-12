@@ -204,4 +204,10 @@ class MyGame extends Forge2DGame
     world.add(Bullet(x: x, y: y, accelX: 0));
     world.add(Bullet(x: x, y: y, accelX: 1.5));
   }
+
+  @override
+  void onRemove() {
+    super.onRemove();
+    hero.cancelSensor();
+  }
 }

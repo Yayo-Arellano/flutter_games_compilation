@@ -6,4 +6,4 @@ bool get isAndroid => defaultTargetPlatform == TargetPlatform.android;
 
 bool get isWeb => kIsWeb;
 
-bool get isMobile => isIOS && isAndroid;
+bool get isMobile => isIOS || isAndroid;

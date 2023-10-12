@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
-import 'package:flame/input.dart';
+import 'package:flame/events.dart';
 import 'package:flutter_learn_flame/lesson_07/objects/ball.dart';
 import 'package:flutter_learn_flame/lesson_07/objects/box.dart';
 import 'package:flutter_learn_flame/lesson_07/objects/floor.dart';
@@ -9,7 +9,7 @@ import 'package:flutter_learn_flame/my_game.dart';
 
 late SpriteAnimation explosion;
 
-class GameLesson07 extends MyGame with TapDetector {
+class GameLesson07 extends MyGame with TapCallbacks {
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -64,8 +64,8 @@ class GameLesson07 extends MyGame with TapDetector {
   }
 
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
     if (Random.secure().nextBool()) {
       world.add(Ball());
     } else {

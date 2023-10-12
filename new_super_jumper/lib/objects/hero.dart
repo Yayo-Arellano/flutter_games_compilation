@@ -274,4 +274,8 @@ class MyHero extends BodyComponent<MyGame>
 
     return false;
   }
+
+  void cancelSensor() {
+    accelerometerSubscription?.cancel();
+  }
 }

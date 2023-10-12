@@ -1,12 +1,12 @@
 import 'dart:math';
 
-import 'package:flame/input.dart';
+import 'package:flame/events.dart';
 import 'package:flutter_learn_flame/lesson_05/objects/ball.dart';
 import 'package:flutter_learn_flame/lesson_05/objects/box.dart';
 import 'package:flutter_learn_flame/lesson_05/objects/floor.dart';
 import 'package:flutter_learn_flame/my_game.dart';
 
-class GameLesson05 extends MyGame with TapDetector {
+class GameLesson05 extends MyGame with TapCallbacks {
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -19,8 +19,8 @@ class GameLesson05 extends MyGame with TapDetector {
   }
 
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
     if (Random().nextBool()) {
       world.add(Ball());
     } else {
