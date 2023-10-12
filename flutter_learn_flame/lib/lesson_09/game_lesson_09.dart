@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
+import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -71,11 +72,14 @@ class GameLesson09 extends MyGame {
     // add(Platform(x: 7, y: -11));
     // add(Platform(x: 9, y: -14));
     await world.add(robot);
-    //
-    // final worldBounds =
-    //     Rect.fromLTRB(0, -double.infinity, worldSize.x, worldSize.y);
-    // camera.followBodyComponent(robot, worldBounds: worldBounds);
     camera.follow(robot);
+    final worldBounds = Rectangle.fromLTRB(
+      worldSize.x / 2,
+      -double.infinity,
+      worldSize.x / 2,
+      worldSize.y / 2,
+    );
+    camera.setBounds(worldBounds);
   }
 
   @override

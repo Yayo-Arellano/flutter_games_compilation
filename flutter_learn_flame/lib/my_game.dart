@@ -33,13 +33,13 @@ class MyGame extends Forge2DGame with KeyboardEvents {
 
   @override
   Future<void> onLoad() async {
-    camera.viewfinder.anchor= Anchor.topLeft;
-
     // Adds a black background to the backdrop
     camera.backdrop.add(_Background(size: screenSize));
 
     camera.viewport.add(fps);
     camera.viewport.add(totalBodies);
+
+    camera.moveTo(worldSize / 2);
   }
 
   @override
