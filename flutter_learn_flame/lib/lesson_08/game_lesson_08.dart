@@ -15,6 +15,7 @@ class GameLesson08 extends MyGame {
   @override
   Future<void> onLoad() async {
     super.onLoad();
+    camera.moveTo(worldSize / 2);
 
     world.add(Floor());
     await world.add(robot);

@@ -71,8 +71,6 @@ class GameLesson09 extends MyGame {
     // add(Platform(x: 5, y: -8));
     // add(Platform(x: 7, y: -11));
     // add(Platform(x: 9, y: -14));
-    await world.add(robot);
-    camera.follow(robot);
     final worldBounds = Rectangle.fromLTRB(
       worldSize.x / 2,
       -double.infinity,
@@ -80,6 +78,9 @@ class GameLesson09 extends MyGame {
       worldSize.y / 2,
     );
     camera.setBounds(worldBounds);
+
+    await world.add(robot);
+    camera.follow(robot);
   }
 
   @override

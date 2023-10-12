@@ -5,6 +5,8 @@ class GameLesson01 extends MyGame {
   @override
   Future<void> onLoad() async {
     super.onLoad();
+    camera.moveTo(worldSize / 2);
+
     world.add(Ball());
   }
 }

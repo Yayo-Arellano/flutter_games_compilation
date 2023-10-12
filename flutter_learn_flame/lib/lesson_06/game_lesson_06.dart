@@ -10,6 +10,8 @@ class GameLesson06 extends MyGame with TapDetector {
   @override
   Future<void> onLoad() async {
     super.onLoad();
+    camera.moveTo(worldSize / 2);
+
     await loadSprite('ball.png');
     await loadSprite('box.png');
 

@@ -38,8 +38,6 @@ class MyGame extends Forge2DGame with KeyboardEvents {
 
     camera.viewport.add(fps);
     camera.viewport.add(totalBodies);
-
-    camera.moveTo(worldSize / 2);
   }
 
   @override
