@@ -6,19 +6,19 @@ import 'package:flame/experimental.dart';
 import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:new_super_jumper/high_scores.dart';
-import 'package:new_super_jumper/objects/background.dart';
-import 'package:new_super_jumper/objects/bullet.dart';
-import 'package:new_super_jumper/objects/cloud_enemy.dart';
-import 'package:new_super_jumper/objects/coin.dart';
-import 'package:new_super_jumper/objects/floor.dart';
-import 'package:new_super_jumper/objects/hearth_enemy.dart';
-import 'package:new_super_jumper/objects/hero.dart';
-import 'package:new_super_jumper/objects/platform.dart';
-import 'package:new_super_jumper/objects/platform_pieces.dart';
-import 'package:new_super_jumper/objects/power_up.dart';
+import 'package:new_super_jumper/components/background.dart';
+import 'package:new_super_jumper/components/bullet.dart';
+import 'package:new_super_jumper/components/cloud_enemy.dart';
+import 'package:new_super_jumper/components/coin.dart';
+import 'package:new_super_jumper/components/floor.dart';
+import 'package:new_super_jumper/components/hearth_enemy.dart';
+import 'package:new_super_jumper/components/my_hero.dart';
+import 'package:new_super_jumper/components/platform.dart';
+import 'package:new_super_jumper/components/platform_pieces.dart';
+import 'package:new_super_jumper/components/power_up.dart';
 import 'package:new_super_jumper/ui/game_ui.dart';
 
-final screenSize = Vector2(428, 926);
+final gameSize = Vector2(428, 926);
 final worldSize = Vector2(4.28, 9.26);
 
 final random = Random();
@@ -42,27 +42,23 @@ class MyGame extends Forge2DGame
   // Scale the screenSize by 100 and set the gravity of 15
   MyGame()
       : super(
-            zoom: 100,
-            cameraComponent: CameraComponent.withFixedResolution(
-              width: screenSize.x,
-              height: screenSize.y,
-            ),
-            gravity: Vector2(0, 9.8));
+          zoom: 100,
+          camera: CameraComponent.withFixedResolution(
+            width: gameSize.x,
+            height: gameSize.y,
+          ),
+          gravity: Vector2(0, 9.8),
+        );
 
   @override
   Future<void> onLoad() async {
-    // Adds a black background to the viewport
     camera.backdrop.add(Background());
     camera.viewport.add(GameUI());
-    // camera.viewfinder.anchor = Anchor.center;
 
     world.add(Floor());
     hero = MyHero();
 
-    // generateNextSectionOfWorld();
-
     world.add(hero);
-
     final worldBounds = Rectangle.fromLTRB(
       worldSize.x / 2,
       -double.infinity,

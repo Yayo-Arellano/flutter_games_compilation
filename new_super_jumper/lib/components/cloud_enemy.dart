@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
-import 'package:new_super_jumper/objects/lightning.dart';
+import 'package:new_super_jumper/components/lightning.dart';
 
 const _timeForNextLightning = 5.0;
 

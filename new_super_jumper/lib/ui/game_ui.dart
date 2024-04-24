@@ -51,8 +51,8 @@ class GameUI extends PositionComponent with HasGameRef<MyGame> {
     add(btPause);
     add(coin);
     add(gun);
-    add(fps);
-    add(totalBodies);
+    // add(fps);
+    // add(totalBodies);
     add(totalScore);
     add(totalCoins);
     add(totalBullets);
@@ -66,7 +66,7 @@ class GameUI extends PositionComponent with HasGameRef<MyGame> {
     totalCoins.text = 'x${gameRef.coins}';
     totalBullets.text = 'x${gameRef.bullets}';
 
-    final posX = screenSize.x - totalCoins.size.x;
+    final posX = gameSize.x - totalCoins.size.x;
     totalCoins.position
       ..x = posX - 5
       ..y = 5;
@@ -82,7 +82,7 @@ class GameUI extends PositionComponent with HasGameRef<MyGame> {
       ..y = 8;
 
     totalScore.position
-      ..x = screenSize.x / 2 - totalScore.size.x / 2
+      ..x = gameSize.x / 2 - totalScore.size.x / 2
       ..y = 5;
   }
 

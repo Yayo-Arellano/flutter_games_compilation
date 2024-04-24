@@ -1,5 +1,5 @@
 import 'package:flame/components.dart';
-import 'package:flame_gdx_texture_packer/atlas/texture_atlas.dart';
+import 'package:flame_texturepacker/flame_texturepacker.dart';
 
 class Assets {
   static late final Sprite button;
@@ -58,7 +58,7 @@ class Assets {
   static late final Sprite platformPinkRight;
 
   static Future<void> load() async {
-    final atlas = await TextureAtlas().load('atlasMap.atlas');
+    final atlas = await TexturePackerAtlas.load('atlasMap.atlas');
     button = atlas.findSpriteByName('button')!;
     buttonPause = atlas.findSpriteByName('buttonPause')!;
     buttonBack = atlas.findSpriteByName('buttonBack')!;

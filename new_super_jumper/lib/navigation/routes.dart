@@ -15,7 +15,7 @@ enum Routes {
   const Routes(this.route);
 
   static Route routes(RouteSettings settings) {
-    MaterialPageRoute _buildRoute(Widget widget) {
+    MaterialPageRoute buildRoute(Widget widget) {
       return MaterialPageRoute(builder: (_) => widget, settings: settings);
     }
 
@@ -23,11 +23,11 @@ enum Routes {
 
     switch (routeName) {
       case Routes.main:
-        return _buildRoute(const MainMenuScreen());
+        return buildRoute(const MainMenuScreen());
       case Routes.game:
-        return _buildRoute(const MyGameWidget());
+        return buildRoute(const MyGameWidget());
       case Routes.leaderboard:
-        return _buildRoute(const LeaderboardScreen());
+        return buildRoute(const LeaderboardScreen());
       default:
         throw Exception('Route does not exists');
     }

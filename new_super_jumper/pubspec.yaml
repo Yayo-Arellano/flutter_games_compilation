@@ -1,32 +1,32 @@
 name: new_super_jumper
-description: Game similar to Doodle jump made with Flutter
+description: "Game similar to Doodle jump made with Flutter"
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.3.3 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  flame: ^1.10.0
-  flame_forge2d: ^0.15.1
-  shared_preferences: ^2.2.2
-  sensors_plus: ^3.0.3
-  flame_gdx_texture_packer: ^0.6.1
+  flame: ^1.17.0
+  flame_forge2d: ^0.18.0
+  shared_preferences: ^2.2.3
+  sensors_plus: ^5.0.1
+  flame_texturepacker: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.3
+  flutter_lints: ^3.0.2
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
     - assets/ui/
 
   fonts:

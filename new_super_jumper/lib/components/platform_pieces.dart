@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
-import 'package:new_super_jumper/objects/platform.dart';
+import 'package:new_super_jumper/components/platform.dart';
 
 class PlatformPieces extends BodyComponent<MyGame> {
   static Vector2 size = Vector2(.62, .5);

@@ -5,13 +5,13 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/services.dart';
 import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
-import 'package:new_super_jumper/objects/coin.dart';
-import 'package:new_super_jumper/objects/floor.dart';
-import 'package:new_super_jumper/objects/hearth_enemy.dart';
-import 'package:new_super_jumper/objects/jetpack_group.dart';
-import 'package:new_super_jumper/objects/lightning.dart';
-import 'package:new_super_jumper/objects/platform.dart';
-import 'package:new_super_jumper/objects/power_up.dart';
+import 'package:new_super_jumper/components/coin.dart';
+import 'package:new_super_jumper/components/floor.dart';
+import 'package:new_super_jumper/components/hearth_enemy.dart';
+import 'package:new_super_jumper/components/jetpack_group.dart';
+import 'package:new_super_jumper/components/lightning.dart';
+import 'package:new_super_jumper/components/platform.dart';
+import 'package:new_super_jumper/components/power_up.dart';
 import 'package:new_super_jumper/utils.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
@@ -56,7 +56,7 @@ class MyHero extends BodyComponent<MyGame>
     renderBody = false;
 
     if (isMobile || isWeb) {
-      accelerometerSubscription = accelerometerEvents.listen((event) {
+      accelerometerSubscription = accelerometerEventStream().listen((event) {
         accelerationX = (event.x * -1).clamp(-1, 1);
       });
     }
@@ -196,13 +196,9 @@ class MyHero extends BodyComponent<MyGame>
 
     final shape = PolygonShape()..setAsBoxXY(.27, .30);
 
-    final fixtureDef = FixtureDef(shape)
-      ..density = 10
-      ..friction = 0
-      ..restitution = 0;
+    final fixtureDef = FixtureDef(shape, density: 10);
     return world.createBody(bodyDef)
-      ..createFixture(fixtureDef)
-      ..setFixedRotation(true);
+      ..createFixture(fixtureDef);
   }
 
   @override
@@ -253,13 +249,13 @@ class MyHero extends BodyComponent<MyGame>
       final platformY = other.body.position.y + Platform.size.y / 2;
 
       if (heroY < platformY) {
-        contact.setEnabled(false);
+        contact.isEnabled = false;
       }
     }
   }
 
   @override
-  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+  bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
       accelerationX = 1;
     } else if (keysPressed.contains(LogicalKeyboardKey.keyA)) {

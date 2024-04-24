@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
-import 'package:new_super_jumper/objects/hearth_enemy.dart';
+import 'package:new_super_jumper/components/hearth_enemy.dart';
 
 class Bullet extends BodyComponent<MyGame> with ContactCallbacks {
   static Vector2 size = Vector2(.15, .15);

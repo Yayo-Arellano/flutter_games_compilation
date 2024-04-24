@@ -8,7 +8,7 @@ import 'package:new_super_jumper/navigation/routes.dart';
 import 'package:new_super_jumper/ui/game_over_menu.dart';
 import 'package:new_super_jumper/ui/pause_menu.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Flame.device.fullScreen();
 
@@ -23,7 +23,7 @@ void main() async {
 }
 
 class MyGameWidget extends StatelessWidget {
-  const MyGameWidget({Key? key}) : super(key: key);
+  const MyGameWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
