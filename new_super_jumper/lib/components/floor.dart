@@ -16,7 +16,7 @@ class Floor extends BodyComponent<MyGame> {
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: Vector2(0, worldSize.y),
+      position: Vector2.zero(),
       type: BodyType.static,
     );
 

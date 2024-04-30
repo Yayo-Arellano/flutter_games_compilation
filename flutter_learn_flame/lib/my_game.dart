@@ -48,8 +48,8 @@ class MyGame extends Forge2DGame with KeyboardEvents {
   }
 
   @override
-  KeyEventResult onKeyEvent(RawKeyEvent event, Set keysPressed) {
-    if (event is RawKeyDownEvent) {
+  KeyEventResult onKeyEvent(KeyEvent event, Set keysPressed) {
+    if (event is KeyDownEvent) {
       if (keysPressed.contains(LogicalKeyboardKey.escape)) {
         navigatorKey.currentState
             ?.pushNamedAndRemoveUntil(Routes.menu, (r) => false);

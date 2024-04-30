@@ -35,7 +35,7 @@ class MyGame extends Forge2DGame
   int score = 0;
   int coins = 0;
   int bullets = 0;
-  double generatedWorldHeight = 6.7;
+  double generatedWorldHeight = -2.55;
 
   var state = GameState.running;
 
@@ -61,9 +61,9 @@ class MyGame extends Forge2DGame
     world.add(hero);
     final worldBounds = Rectangle.fromLTRB(
       worldSize.x / 2,
-      -double.infinity,
+      -double.maxFinite,
       worldSize.x / 2,
-      worldSize.y / 2,
+      -worldSize.y / 2,
     );
     camera.follow(hero);
     camera.setBounds(worldBounds);
@@ -100,10 +100,6 @@ class MyGame extends Forge2DGame
     final otherY = (position.y - worldSize.y) * -1;
 
     return otherY < heroY - worldSize.y / 2;
-
-    // final heroPosY = (hero.body.position.y - worldSize.y).abs();
-    // final otherPosY = (position.y - worldSize.y).abs();
-    // return otherPosY < heroPosY - worldSize.y / 2;
   }
 
   void generateNextSectionOfWorld() {

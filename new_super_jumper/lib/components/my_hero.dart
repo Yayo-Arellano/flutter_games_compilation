@@ -190,15 +190,14 @@ class MyHero extends BodyComponent<MyGame>
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: Vector2(worldSize.x / 2, worldSize.y - 0.5),
+      position: Vector2(worldSize.x / 2, -0.5),
       type: BodyType.dynamic,
     );
 
     final shape = PolygonShape()..setAsBoxXY(.27, .30);
 
     final fixtureDef = FixtureDef(shape, density: 10);
-    return world.createBody(bodyDef)
-      ..createFixture(fixtureDef);
+    return world.createBody(bodyDef)..createFixture(fixtureDef);
   }
 
   @override
