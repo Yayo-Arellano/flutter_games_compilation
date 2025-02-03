@@ -15,6 +15,7 @@ import 'package:new_super_jumper/components/power_up.dart';
 import 'package:new_super_jumper/utils.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
+// The hero can be have one of three states jumping, falling, or dead.
 enum HeroState {
   jump,
   fall,
@@ -25,12 +26,26 @@ const _durationJetpack = 3.0;
 
 class MyHero extends BodyComponent<MyGame>
     with ContactCallbacks, KeyboardHandler {
+  // This is the size of the Sprite that we will draw in top of the body
   static final size = Vector2(.75, .80);
 
+  // The initial state is our hero falling
   var state = HeroState.fall;
 
-  late final SpriteComponent fallComponent;
-  late final SpriteComponent jumpComponent;
+// Initialize the _fallComponent with the falling sprite
+  late final SpriteComponent _fallComponent = SpriteComponent(
+    sprite: Assets.heroFall,
+    size: size,
+    anchor: Anchor.center,
+  );
+
+  // Initialize the _fallComponent with the jumping sprite
+  late final SpriteComponent _jumpComponent = SpriteComponent(
+    sprite: Assets.heroJump,
+    size: size,
+    anchor: Anchor.center,
+  );
+
   final jetpackComponent = JetpackGroup();
   final bubbleShieldComponent = SpriteComponent(
     sprite: Assets.bubble,
@@ -39,7 +54,8 @@ class MyHero extends BodyComponent<MyGame>
     priority: 2,
   );
 
-  late Component currentComponent;
+  // Helper to keep track of the current component falling or jumping
+  late Component _currentSprite;
 
   double accelerationX = 0;
 
@@ -61,24 +77,16 @@ class MyHero extends BodyComponent<MyGame>
       });
     }
 
-    fallComponent = SpriteComponent(
-      sprite: Assets.heroFall,
-      size: size,
-      anchor: Anchor.center,
-    );
-
-    jumpComponent = SpriteComponent(
-      sprite: Assets.heroJump,
-      size: size,
-      anchor: Anchor.center,
-    );
-
-    currentComponent = fallComponent;
-    add(currentComponent);
+    // Add the initial component to the hero
+    _currentSprite = _fallComponent;
+    add(_currentSprite);
   }
 
   void jump() {
-    if (state == HeroState.jump || state == HeroState.dead) return;
+    // If the state is jump or dead we return early to avoid
+    // jumping twice or jumping when our hero is dead
+    if (state case HeroState.jump || HeroState.dead) return;
+
     final velocity = body.linearVelocity;
     body.linearVelocity = Vector2(velocity.x, -7.5);
     state = HeroState.jump;
@@ -136,6 +144,8 @@ class MyHero extends BodyComponent<MyGame>
     final velocity = body.linearVelocity;
     final position = body.position;
 
+    // If the velocity in the y-axis became positive it means the hero is
+    // falling and we change the state to falling unless the hero is dead
     if (velocity.y > 0.1 && state != HeroState.dead) {
       state = HeroState.fall;
     }
@@ -160,12 +170,14 @@ class MyHero extends BodyComponent<MyGame>
       body.setTransform(position, 0);
     }
 
+    // Set the jumping or falling component
+    // depending on the state
     if (state == HeroState.jump) {
-      _setComponent(jumpComponent);
+      _setComponent(_jumpComponent);
     } else if (state == HeroState.fall) {
-      _setComponent(fallComponent);
+      _setComponent(_fallComponent);
     } else if (state == HeroState.dead) {
-      _setComponent(fallComponent);
+      _setComponent(_fallComponent);
     }
   }
 
@@ -180,9 +192,9 @@ class MyHero extends BodyComponent<MyGame>
       }
     }
 
-    if (component == currentComponent) return;
-    remove(currentComponent);
-    currentComponent = component;
+    if (component == _currentSprite) return;
+    remove(_currentSprite);
+    _currentSprite = component;
     add(component);
   }
 

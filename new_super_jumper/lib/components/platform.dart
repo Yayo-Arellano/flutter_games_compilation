@@ -3,6 +3,7 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:new_super_jumper/assets.dart';
 import 'package:new_super_jumper/my_game.dart';
 
+/// There are 18 different platforms
 enum PlatformType {
   blue,
   blueLight,
@@ -25,45 +26,28 @@ enum PlatformType {
 }
 
 extension PlatformTypeExtension on PlatformType {
+  // Helper to get the sprite that we will draw on screen
   Sprite get sprite {
-    switch (this) {
-      case PlatformType.beige:
-        return Assets.platformBeige;
-      case PlatformType.blue:
-        return Assets.platformBlue;
-      case PlatformType.blueLight:
-        return Assets.platformBlueLight;
-      case PlatformType.beigeLight:
-        return Assets.platformBeigeLight;
-      case PlatformType.beigeBroken:
-        return Assets.platformBeigeBroken;
-      case PlatformType.blueBroken:
-        return Assets.platformBlueBroken;
-      case PlatformType.gray:
-        return Assets.platformGray;
-      case PlatformType.grayLight:
-        return Assets.platformGrayLight;
-      case PlatformType.grayBroken:
-        return Assets.platformGrayBroken;
-      case PlatformType.green:
-        return Assets.platformGreen;
-      case PlatformType.greenLight:
-        return Assets.platformGreenLight;
-      case PlatformType.greenBroken:
-        return Assets.platformGreenBroken;
-      case PlatformType.multicolor:
-        return Assets.platformMulticolor;
-      case PlatformType.multicolorLight:
-        return Assets.platformMulticolorLight;
-      case PlatformType.multicolorBroken:
-        return Assets.platformMulticolorBroken;
-      case PlatformType.pink:
-        return Assets.platformPink;
-      case PlatformType.pinkLight:
-        return Assets.platformPinkLight;
-      case PlatformType.pinkBroken:
-        return Assets.platformPinkBroken;
-    }
+    return switch (this) {
+      PlatformType.beige => Assets.platformBeige,
+      PlatformType.blue => Assets.platformBlue,
+      PlatformType.blueLight => Assets.platformBlueLight,
+      PlatformType.beigeLight => Assets.platformBeigeLight,
+      PlatformType.beigeBroken => Assets.platformBeigeBroken,
+      PlatformType.blueBroken => Assets.platformBlueBroken,
+      PlatformType.gray => Assets.platformGray,
+      PlatformType.grayLight => Assets.platformGrayLight,
+      PlatformType.grayBroken => Assets.platformGrayBroken,
+      PlatformType.green => Assets.platformGreen,
+      PlatformType.greenLight => Assets.platformGreenLight,
+      PlatformType.greenBroken => Assets.platformGreenBroken,
+      PlatformType.multicolor => Assets.platformMulticolor,
+      PlatformType.multicolorLight => Assets.platformMulticolorLight,
+      PlatformType.multicolorBroken => Assets.platformMulticolorBroken,
+      PlatformType.pink => Assets.platformPink,
+      PlatformType.pinkLight => Assets.platformPinkLight,
+      PlatformType.pinkBroken => Assets.platformPinkBroken
+    };
   }
 
   bool get isBroken {
@@ -83,7 +67,7 @@ extension PlatformTypeExtension on PlatformType {
 
 class Platform extends BodyComponent<MyGame> {
   static Vector2 size = Vector2(1.2, .5);
-  final Vector2 _position;
+  final Vector2 _initialPosition;
   bool destroy = false;
 
   final PlatformType type;
@@ -91,7 +75,7 @@ class Platform extends BodyComponent<MyGame> {
   Platform({
     required double x,
     required double y,
-  })  : _position = Vector2(x, y),
+  })  : _initialPosition = Vector2(x, y),
         type = PlatformType.values
             .elementAt(random.nextInt(PlatformType.values.length));
 
@@ -126,7 +110,7 @@ class Platform extends BodyComponent<MyGame> {
   Body createBody() {
     final bodyDef = BodyDef(
       userData: this,
-      position: _position,
+      position: _initialPosition,
       type: BodyType.static,
     );
 
