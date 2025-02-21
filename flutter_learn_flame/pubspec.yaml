@@ -4,14 +4,14 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.5.3 <4.0.0"
+  sdk: ^3.7.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  flame: ^1.22.0
-  flame_forge2d: ^0.18.2+3
+  flame: ^1.25.0
+  flame_forge2d: ^0.18.2+6
 
 dev_dependencies:
   flutter_test:
